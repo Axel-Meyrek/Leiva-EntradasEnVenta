@@ -1,11 +1,11 @@
 /* IMPORTACIONES */
 import puppeteer from "puppeteer";
-import cron from 'node-cron';
 
 /* FUNCIONES */
 const validarVentaBoletos = async () =>  {
     const navegador = await puppeteer.launch({
         headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
     const page = await navegador.newPage();
     await page.goto('https://leivaentradas.com');
@@ -22,8 +22,3 @@ const validarVentaBoletos = async () =>  {
     /* cierra navegador */
     await navegador.close();
 }
-
-cron.schedule('*/5 * * * *', () => {
-    console.log('⏱ Ejecutando función...');
-    validarVentaBoletos();
-});
