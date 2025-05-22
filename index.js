@@ -22,3 +22,5 @@ const validarVentaBoletos = async () =>  {
     /* cierra navegador */
     await navegador.close();
 }
+
+validarVentaBoletos();
