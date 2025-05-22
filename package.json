@@ -1,0 +1,22 @@
+{
+  "name": "leiva-entradas-en-venta",
+  "version": "1.0.0",
+  "description": "Este algoritmo se encarga de hacer un web-scraping al sitio oficial de la venta de boletos para el concierto de leiva, y avisar si la venta de boletos en mexico esta activa, asi puedo comprarlos lo mas pronto posible",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Leiva",
+    "JavaScript",
+    "VentaBoletosLeiva",
+    "Puppeteer"
+  ],
+  "author": "Axel Meyrek",
+  "license": "ISC",
+  "dependencies": {
+    "node-cron": "^4.0.7",
+    "puppeteer": "^24.9.0"
+  }
+}
