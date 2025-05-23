@@ -1,24 +1,24 @@
-name: Check Boletos Leiva
+name: Revisar boletos de Leiva
 
 on:
   schedule:
     - cron: '*/5 * * * *'
+  workflow_dispatch:
 
 jobs:
-  run-script:
+  revisar:
     runs-on: ubuntu-latest
 
+    env:
+      TOKEN: ${{ secrets.TOKEN }}
+      CHATID: ${{ secrets.CHATID }}
+
     steps:
-    - name: Check out repo
-      uses: actions/checkout@v3
+      - name: Checkout del código
+        uses: actions/checkout@v3
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
+      - name: Instalar dependencias
+        run: npm install
 
-    - name: Install dependencies
-      run: npm install
-
-    - name: Run script
-      run: node index.js
+      - name: Ejecutar script
+        run: node index.js
