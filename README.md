@@ -1,6 +1,6 @@
 # 🎫 leiva-checker
 
-Este proyecto es un pequeño bot desarrollado con [Puppeteer](https://pptr.dev/) y [node-cron](https://www.npmjs.com/package/node-cron) que verifica cada 5 minutos si las entradas para el concierto de **Leiva** ya están disponibles.
+Este proyecto es un pequeño bot desarrollado con [Puppeteer](https://pptr.dev/) y [node-cron](https://www.npmjs.com/package/node-cron) que verifica cada 5 minutos si las entradas para el concierto de **Leiva** ya están disponibles y **envía una notificación por Telegram** en cuanto lo estén.
 
 ## 🎯 ¿Por qué hice esto?
 
@@ -14,7 +14,7 @@ El script hace lo siguiente:
 2. Visita la página oficial de entradas: [https://leivaentradas.com](https://leivaentradas.com)
 3. Extrae el texto del botón correspondiente al estado de los boletos.
 4. Verifica si dice `"Próximamente"` o si ya están disponibles.
-5. Muestra un mensaje en consola dependiendo del estado.
+5. **Envía un mensaje a Telegram automáticamente.**
 6. Se ejecuta automáticamente **cada 5 minutos** gracias a `node-cron`.
 
 ## 🧠 Tecnologías usadas
@@ -22,6 +22,7 @@ El script hace lo siguiente:
 - [Node.js](https://nodejs.org/)
 - [Puppeteer](https://pptr.dev/) – para automatizar el navegador.
 - [node-cron](https://www.npmjs.com/package/node-cron) – para programar tareas periódicas.
+- [Telegram Bot API](https://core.telegram.org/bots/api) – para enviar mensajes.
 
 ## 📦 Instalación
 
@@ -38,7 +39,14 @@ El script hace lo siguiente:
    npm install
    ```
 
-3. Ejecuta el script:
+3. Crea un archivo `.env` con tu token de bot de Telegram y el ID del chat:
+
+   ```env
+   TOKEN=tu_token_aqui
+   CHATID=tu_chat_id_aqui
+   ```
+
+4. Ejecuta el script:
 
    ```bash
    node index.js
@@ -70,6 +78,12 @@ O bien:
 ```bash
 ⏱ Ejecutando función...
 Los boletos ya estan a la venta
+```
+
+Y en Telegram recibirás algo como:
+
+```
+🎟 ¡Ya puedes comprar tus boletos de Leiva en https://leivaentradas.com!
 ```
 
 ## 🧪 Notas
