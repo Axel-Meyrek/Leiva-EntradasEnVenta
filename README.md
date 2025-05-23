@@ -1,4 +1,4 @@
-# 🎫 leiva-checker
+# 🎫 Entradas Leiva - Tour Gigante - Mexico
 
 Este proyecto es un pequeño bot desarrollado con [Puppeteer](https://pptr.dev/) y [node-cron](https://www.npmjs.com/package/node-cron) que verifica cada 5 minutos si las entradas para el concierto de **Leiva** ya están disponibles y **envía una notificación por Telegram** en cuanto lo estén.
 
